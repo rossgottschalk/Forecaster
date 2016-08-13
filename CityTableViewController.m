@@ -125,7 +125,6 @@
     City *aCity = [City cityWithDictionary:googleResponse];
     [self.addedCity addObject:aCity];
     dispatch_async(dispatch_get_main_queue(),^{
-        //[self.tableView reloadData];
     });
     
     if(aCity)

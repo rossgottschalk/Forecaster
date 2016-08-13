@@ -24,6 +24,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)setCity:(City *)addedCity andSetWeather:(Weather *)addedWeather
+{
+    if (self.city != addedCity) {
+        <#statements#>
+    }
+}
 /*
 #pragma mark - Navigation
 
