@@ -16,11 +16,12 @@
     if(cityDict)
     {
         aCity = [[City alloc] init];
-        
         NSArray *resultsFromAPI = cityDict[@"results"];
         NSDictionary *resultsDict = resultsFromAPI[0];
         
         
+        
+        //Array for City and State
         NSArray *addressComponents = resultsDict [@"address_components"];
         
         //City Name
@@ -30,6 +31,15 @@
         //State Initials
         NSDictionary *stateDict = addressComponents[2];
         aCity.stateInitials = stateDict[@"short_name"];
+        
+        NSDictionary *geoDict = resultsDict [@"geometry"];
+        NSDictionary *locationDict = geoDict [@"location"];
+        aCity.latNumber = locationDict [@"lat"];
+        aCity.longNumber = locationDict [@"lng"];
+        
+        
+        
+        
         
         
         

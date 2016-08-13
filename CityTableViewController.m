@@ -10,9 +10,11 @@
 #import "SearchZipViewController.h"
 #import "APIController.h"
 #import "City.h"
+#import "Weather.h"
 
 @interface CityTableViewController ()<SearchTextFieldDelegate, APIControllerProtocol>
 @property (strong, nonatomic) NSMutableArray *addedCity;
+@property (strong, nonatomic) NSMutableArray *addedWeather;
 
 @end
 
@@ -116,11 +118,31 @@
     [self.tableView reloadData];
 }
 
+
 #pragma mark - API Protocol
 -(void)didReceiveAPIResults:(NSDictionary *)googleResponse
 {
     City *aCity = [City cityWithDictionary:googleResponse];
     [self.addedCity addObject:aCity];
+    dispatch_async(dispatch_get_main_queue(),^{
+        [self.tableView reloadData];
+    });
+    
+    if(aCity)
+    {
+        NSString *latitudeForecaster = [NSString stringWithFormat:@"%@", aCity.latNumber];
+        NSString *longitudeForecaster = [NSString stringWithFormat:@"%@",aCity.longNumber];
+        
+        APIController *apiController = [[APIController alloc] init];
+        apiController.delegate = self;
+        [apiController searchForecasterForLatitude:latitudeForecaster andLongitude:longitudeForecaster];
+    }
+}
+
+-(void)didRecieveSECONDAPIResults:(NSDictionary *)forecastResponse;
+{
+    Weather *aWeather = [Weather weatherWithDictionary:forecastResponse];
+    [self.addedWeather addObject:aWeather];
     dispatch_async(dispatch_get_main_queue(),^{
         [self.tableView reloadData];
     });

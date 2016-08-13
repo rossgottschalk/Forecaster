@@ -33,6 +33,27 @@
                                       }];
     [dataTask resume];
 }
+//ee8204ba6a48788b511ebc002c5679a1
 
+-(void)searchForecasterForLatitude:(NSString *)lat andLongitude:(NSString *)lng
+{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.forecast.io/forecast/ee8204ba6a48788b511ebc002c5679a1/%@,%@", lat, lng]];
+    NSURLSession *session =[NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+                                  {
+                                      if(error)
+                                      {
+                                          NSLog(@"Could not communicate to Forecaster.io: %@", [error localizedDescription]);
+                                      }
+                                      else
+                                      {
+                                          NSError *parseError = nil;
+                                          NSDictionary *forecasterResponse = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
+                                          [self.delegate didRecieveSECONDAPIResults:forecasterResponse];
+                                          NSLog(@"%@", forecasterResponse);
+                                      }
+                                  }];
+[dataTask resume];
+}
 
 @end

@@ -14,6 +14,8 @@
 @property (strong, nonatomic) id<APIControllerProtocol> delegate;
 
 -(void)searchGoogleFor:(NSString *)searchTerm;
+-(void)searchForecasterForLatitude:(NSString *)lat andLongitude:(NSString*)lng;
+
 
 
 @end

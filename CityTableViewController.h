@@ -15,6 +15,7 @@
 
 @protocol APIControllerProtocol
 -(void)didReceiveAPIResults:(NSDictionary *)googleResponse;
+-(void)didRecieveSECONDAPIResults:(NSDictionary *) forecastResponse;
 @end
 
 
