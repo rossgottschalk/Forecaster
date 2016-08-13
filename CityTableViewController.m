@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.addedCity = [[NSMutableArray alloc] init];
-    
+    self.addedWeather = [[NSMutableArray alloc] init];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -55,9 +55,9 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CityCell" forIndexPath:indexPath];
     City *aCity = self.addedCity [indexPath.row];
+    Weather *aWeather = self.addedWeather [indexPath.row];
     cell.textLabel.text = aCity.cityName;
-    cell.detailTextLabel.text = aCity.stateInitials;
-    
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d°F",[aWeather.temperature intValue]];
     
     return cell;
 }
@@ -125,7 +125,7 @@
     City *aCity = [City cityWithDictionary:googleResponse];
     [self.addedCity addObject:aCity];
     dispatch_async(dispatch_get_main_queue(),^{
-        [self.tableView reloadData];
+        //[self.tableView reloadData];
     });
     
     if(aCity)
