@@ -9,6 +9,7 @@
 #import "CityTableViewController.h"
 #import "SearchZipViewController.h"
 #import "APIController.h"
+#import "City.h"
 
 @interface CityTableViewController ()<SearchTextFieldDelegate, APIControllerProtocol>
 @property (strong, nonatomic) NSMutableArray *addedCity;
@@ -51,8 +52,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CityCell" forIndexPath:indexPath];
-    
-    cell.textLabel.text = self.addedCity [indexPath.row];
+    City *aCity = self.addedCity [indexPath.row];
+    cell.textLabel.text = aCity.cityName;
+    cell.detailTextLabel.text = aCity.stateInitials;
     
     
     return cell;
@@ -117,7 +119,11 @@
 #pragma mark - API Protocol
 -(void)didReceiveAPIResults:(NSDictionary *)googleResponse
 {
-    
+    City *aCity = [City cityWithDictionary:googleResponse];
+    [self.addedCity addObject:aCity];
+    dispatch_async(dispatch_get_main_queue(),^{
+        [self.tableView reloadData];
+    });
 }
 
 @end

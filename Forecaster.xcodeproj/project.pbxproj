@@ -10,6 +10,7 @@
 		5BC3F7261D5F466F007C8B59 /* CityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC3F7251D5F466F007C8B59 /* CityTableViewController.m */; };
 		5BC3F7291D5F4F78007C8B59 /* SearchZipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC3F7281D5F4F78007C8B59 /* SearchZipViewController.m */; };
 		5BC3F72C1D5F5E91007C8B59 /* APIController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC3F72B1D5F5E91007C8B59 /* APIController.m */; };
+		5BC3F72F1D5F79DC007C8B59 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC3F72E1D5F79DC007C8B59 /* City.m */; };
 		5BDDAFFD1D5CBD14002D3992 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BDDAFFC1D5CBD14002D3992 /* main.m */; };
 		5BDDB0001D5CBD14002D3992 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BDDAFFF1D5CBD14002D3992 /* AppDelegate.m */; };
 		5BDDB0061D5CBD14002D3992 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BDDB0041D5CBD14002D3992 /* Main.storyboard */; };
@@ -24,6 +25,8 @@
 		5BC3F7281D5F4F78007C8B59 /* SearchZipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchZipViewController.m; sourceTree = "<group>"; };
 		5BC3F72A1D5F5E91007C8B59 /* APIController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIController.h; sourceTree = "<group>"; };
 		5BC3F72B1D5F5E91007C8B59 /* APIController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIController.m; sourceTree = "<group>"; };
+		5BC3F72D1D5F79DC007C8B59 /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
+		5BC3F72E1D5F79DC007C8B59 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
 		5BDDAFF81D5CBD14002D3992 /* Forecaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forecaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BDDAFFC1D5CBD14002D3992 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5BDDAFFE1D5CBD14002D3992 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -70,6 +73,8 @@
 				5BC3F7251D5F466F007C8B59 /* CityTableViewController.m */,
 				5BC3F7271D5F4F78007C8B59 /* SearchZipViewController.h */,
 				5BC3F7281D5F4F78007C8B59 /* SearchZipViewController.m */,
+				5BC3F72D1D5F79DC007C8B59 /* City.h */,
+				5BC3F72E1D5F79DC007C8B59 /* City.m */,
 				5BC3F72A1D5F5E91007C8B59 /* APIController.h */,
 				5BC3F72B1D5F5E91007C8B59 /* APIController.m */,
 				5BDDB0041D5CBD14002D3992 /* Main.storyboard */,
@@ -161,6 +166,7 @@
 			files = (
 				5BC3F7291D5F4F78007C8B59 /* SearchZipViewController.m in Sources */,
 				5BC3F72C1D5F5E91007C8B59 /* APIController.m in Sources */,
+				5BC3F72F1D5F79DC007C8B59 /* City.m in Sources */,
 				5BC3F7261D5F466F007C8B59 /* CityTableViewController.m in Sources */,
 				5BDDB0001D5CBD14002D3992 /* AppDelegate.m in Sources */,
 				5BDDAFFD1D5CBD14002D3992 /* main.m in Sources */,

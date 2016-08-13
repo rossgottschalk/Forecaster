@@ -9,20 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @protocol SearchTextFieldDelegate
-
 -(void)searchWasTyped:(NSString *)zipCodeToLookUp;
-
 @end
 
 
 @protocol APIControllerProtocol
-
 -(void)didReceiveAPIResults:(NSDictionary *)googleResponse;
-
 @end
 
 
 @interface CityTableViewController : UITableViewController
-
-
 @end
