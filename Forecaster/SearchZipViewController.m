@@ -24,10 +24,16 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 - (IBAction)searchZipTapped:(UIButton *)sender
 {
     [self.delegate searchWasTyped:self.searchZipTextField.text];
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (IBAction)cancelTapped:(UIButton *)sender
+{
+   [self dismissViewControllerAnimated:YES completion:nil]; 
 }
 
 /*

@@ -10,6 +10,8 @@
 
 @implementation APIController
 
+//API controllers sourced from AlbumSearch*******************************
+
 -(void)searchGoogleFor:(NSString *)searchTerm
 {
 //    NSString *googleSearchTerm = [searchTerm stringByReplacingOccurrencesOfString:@" " withString:@"%20"];

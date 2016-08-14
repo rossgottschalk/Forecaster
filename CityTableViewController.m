@@ -106,10 +106,13 @@
     ///self.tableview????
     //dont need it here because I just want to reload the data at the very end
     
+    
+    
     if(aCity)
     {
         
         //have to convert the numbers into strings
+        //sourced from StackOverflow*********************************************
         NSString *latitudeForecaster = [NSString stringWithFormat:@"%@", aCity.latNumber];
         NSString *longitudeForecaster = [NSString stringWithFormat:@"%@",aCity.longNumber];
         

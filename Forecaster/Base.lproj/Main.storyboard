@@ -239,10 +239,21 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ew8-vq-YS3">
-                                <rect key="frame" x="512" y="108" width="48" height="30"/>
+                                <rect key="frame" x="514" y="108" width="46" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="Search"/>
                                 <connections>
                                     <action selector="searchZipTapped:" destination="X2R-f5-HVS" eventType="touchUpInside" id="bfS-NB-VeC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="irT-k8-FSh">
+                                <rect key="frame" x="40" y="108" width="45" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="1" green="0.066152303770000004" blue="0.024785690780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelTapped:" destination="X2R-f5-HVS" eventType="touchUpInside" id="Ilr-j3-nkJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -252,6 +263,8 @@
                             <constraint firstItem="ADE-tO-yvK" firstAttribute="top" secondItem="bYD-WS-9fQ" secondAttribute="bottom" constant="50" id="ICa-Gr-toJ"/>
                             <constraint firstItem="Ew8-vq-YS3" firstAttribute="top" secondItem="ADE-tO-yvK" secondAttribute="bottom" constant="8" id="L62-Bp-q0d"/>
                             <constraint firstAttribute="trailing" secondItem="Ew8-vq-YS3" secondAttribute="trailing" constant="40" id="czJ-vd-xNj"/>
+                            <constraint firstItem="irT-k8-FSh" firstAttribute="top" secondItem="ADE-tO-yvK" secondAttribute="bottom" constant="8" id="e2l-OP-NmU"/>
+                            <constraint firstItem="irT-k8-FSh" firstAttribute="leading" secondItem="mVD-RZ-gWh" secondAttribute="leading" constant="40" id="hK1-kZ-w7Y"/>
                             <constraint firstItem="ADE-tO-yvK" firstAttribute="leading" secondItem="mVD-RZ-gWh" secondAttribute="leading" constant="40" id="l2B-Fl-2n7"/>
                         </constraints>
                     </view>

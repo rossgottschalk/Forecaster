@@ -33,6 +33,8 @@
     [super didReceiveMemoryWarning];
 }
 
+
+//next two methods sourced from Greg's GitHub Friends ********************************************
 -(void)setCity:(City *)specificCity andSetWeather:(Weather *)specificWeather
 {
     if (self.theCity != specificCity && self.theWeather!= specificWeather)
@@ -42,14 +44,6 @@
         [self configureView];
     }
 }
-
-//@property (weak, nonatomic) IBOutlet UILabel *cityNameLabel;
-//@property (weak, nonatomic) IBOutlet UILabel *tempLabel;
-//@property (weak, nonatomic) IBOutlet UILabel *feelsLikeLabel;
-//@property (weak, nonatomic) IBOutlet UILabel *humidityLabel;
-//@property (weak, nonatomic) IBOutlet UILabel *chanceOfRainLabel;
-//@property (weak, nonatomic) IBOutlet UILabel *windLabel;
-//
 
 
 
@@ -68,6 +62,7 @@
         
         
         //doubles because API gives it as a double
+        //sourced from StackOverFlow****************************************************************
         self.humidityLabel.text = [NSString stringWithFormat:@"%g%%", ([self.theWeather.humidity doubleValue] * 100)];
         self.chanceOfRainLabel.text = [NSString stringWithFormat:@"%g%%", ([self.theWeather.precipProbability doubleValue] * 100)];
     }
