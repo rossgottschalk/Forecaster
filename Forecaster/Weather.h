@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface Weather : NSObject
+
 @property (nonatomic) NSString *summary;
 @property (nonatomic) NSNumber *precipProbability;
 @property (nonatomic) NSNumber *temperature;

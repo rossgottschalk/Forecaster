@@ -11,21 +11,9 @@
 #import "Weather.h"
 
 @interface WeatherDetailViewController : UIViewController
-//@property (nonatomic) NSString *summary;
-//@property (nonatomic) NSNumber *precipProbability;
-//@property (nonatomic) NSNumber *temperature;
-//@property (nonatomic) NSNumber *apparentTemperature;
-//@property (nonatomic) NSNumber *humidity;
-//@property (nonatomic) NSNumber *windSpeed;
-@property (weak, nonatomic) IBOutlet UILabel *cityNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *tempLabel;
-@property (weak, nonatomic) IBOutlet UILabel *feelsLikeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *humidityLabel;
-@property (weak, nonatomic) IBOutlet UILabel *chanceOfRainLabel;
-@property (weak, nonatomic) IBOutlet UILabel *windLabel;
-
-@property (nonatomic) City *city;
-@property (nonatomic) Weather *weather;
 
 
+
+@property (nonatomic) City *theCity;
+@property (nonatomic) Weather *theWeather;
 @end

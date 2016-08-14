@@ -9,25 +9,67 @@
 #import "WeatherDetailViewController.h"
 
 @interface WeatherDetailViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *cityNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tempLabel;
+@property (weak, nonatomic) IBOutlet UILabel *feelsLikeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *humidityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *chanceOfRainLabel;
+@property (weak, nonatomic) IBOutlet UILabel *windLabel;
+
+-(void)configureView;
 
 @end
 
 @implementation WeatherDetailViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
--(void)setCity:(City *)addedCity andSetWeather:(Weather *)addedWeather
+- (void)viewDidLoad
 {
-    if (self.city != addedCity) {
-        <#statements#>
+    [super viewDidLoad];
+    [self configureView];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+}
+
+-(void)setCity:(City *)specificCity andSetWeather:(Weather *)specificWeather
+{
+    if (self.theCity != specificCity && self.theWeather!= specificWeather)
+    {
+        self.theCity = specificCity;
+        self.theWeather = specificWeather;
+        [self configureView];
+    }
+}
+
+//@property (weak, nonatomic) IBOutlet UILabel *cityNameLabel;
+//@property (weak, nonatomic) IBOutlet UILabel *tempLabel;
+//@property (weak, nonatomic) IBOutlet UILabel *feelsLikeLabel;
+//@property (weak, nonatomic) IBOutlet UILabel *humidityLabel;
+//@property (weak, nonatomic) IBOutlet UILabel *chanceOfRainLabel;
+//@property (weak, nonatomic) IBOutlet UILabel *windLabel;
+//
+
+
+
+-(void)configureView
+{
+    if (self.theCity && self.theWeather)
+    {
+        self.cityNameLabel.text = self.theCity.cityName;
+        
+        
+        self.tempLabel.text = [NSString stringWithFormat:@"%d°F",[self.theWeather.temperature intValue]];
+        self.windLabel.text = [NSString stringWithFormat:@"%dmph", [self.theWeather.windSpeed intValue]];
+        self.feelsLikeLabel.text = [NSString stringWithFormat:@"%d°F",[self.theWeather.apparentTemperature intValue]];
+        
+        
+        
+        
+        //doubles because API gives it as a double
+        self.humidityLabel.text = [NSString stringWithFormat:@"%g%%", ([self.theWeather.humidity doubleValue] * 100)];
+        self.chanceOfRainLabel.text = [NSString stringWithFormat:@"%g%%", ([self.theWeather.precipProbability doubleValue] * 100)];
     }
 }
 /*

@@ -13,6 +13,7 @@
 @property (nonatomic)NSString *cityName;
 @property (nonatomic)NSString *stateInitials;
 
+
 //Going to need to convert these to strings for 2nd API
 @property (nonatomic)NSNumber *latNumber;
 @property (nonatomic)NSNumber *longNumber;

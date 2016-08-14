@@ -19,6 +19,7 @@
         NSDictionary *resultsFromAPI = weatherDict[@"currently"];
         
         
+        
         aWeather.summary = resultsFromAPI[@"summary"];
         aWeather.precipProbability = resultsFromAPI[@"precipProbability"];
         aWeather.temperature = resultsFromAPI[@"temperature"];
