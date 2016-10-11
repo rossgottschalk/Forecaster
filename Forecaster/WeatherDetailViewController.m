@@ -51,7 +51,7 @@
 {
     if (self.theCity && self.theWeather)
     {
-        self.cityNameLabel.text = self.theCity.cityName;
+        self.cityNameLabel.text = [NSString stringWithFormat:@"%@ is", self.theCity.cityName];
         
         
         self.tempLabel.text = [NSString stringWithFormat:@"%d°F",[self.theWeather.temperature intValue]];
@@ -67,6 +67,12 @@
         self.chanceOfRainLabel.text = [NSString stringWithFormat:@"%g%%", ([self.theWeather.precipProbability doubleValue] * 100)];
     }
 }
+
+- (IBAction)backPressed:(id)sender
+{
+    [self dismissViewControllerAnimated:NO completion:nil];
+}
+
 /*
 #pragma mark - Navigation
 

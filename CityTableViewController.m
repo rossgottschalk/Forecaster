@@ -76,9 +76,6 @@
         weatherDetailVC.theWeather = self.addedWeather [indexPath.row];
     }
     
-    
-    
-    
     if ([segue.identifier isEqualToString:@"SearchCitySegue"])
     {
         SearchZipViewController *searchZipVC = [segue destinationViewController];
